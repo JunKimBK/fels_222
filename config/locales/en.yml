@@ -35,3 +35,18 @@ basiclogin:
   login: "Log in"
   new_user: "New user?"
   signup: "Sign up now!"
+  welcome: "Welcome to the E-learning!"
+sign:
+  signup: "Sign up"
+  error: "error"
+  contains: "The form contains"
+  not_exist: "User not exist"
+  not_current_user: "You do not have right to access this."
+  success: "Update complete"
+  denied: "Denide"
+  destroy: "User deleted"
+seed:
+  admin: "Minh la Tung"
+  email_admin: "vtungcntt12t1@gmail.com",
+  email_correct: "example-#{n+1}@railstutorial.org"
+  password: "123456"
