@@ -6,4 +6,16 @@ Rails.application.routes.draw do
   get  "/signup",  to: "users#new"
   post "/signup",  to: "users#create"
   resources :users
+
+  resources :category, only: :index do
+    resources :lessons, except: [:index, :new, :destroy]
+  end
+
+  namespace :admin do
+    root "users#index"
+    resources :users
+    resources :categories do
+    resources :words
+    end
+  end
 end
