@@ -11,6 +11,8 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "config", "~> 1.3"
+gem "autoprefixer-rails"
+gem "faker"
 
 group :development, :test do
   gem "byebug", platform: :mri

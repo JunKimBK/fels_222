@@ -1,8 +1,12 @@
 user:
   avatar:
     avatar_default_size: 80
+  name:
+    maximum_length: 25
   email:
     minimum_length: 6
     maximum_length: 50
+  password:
+    minimum_length: 6
   page:
     per_page: 5
