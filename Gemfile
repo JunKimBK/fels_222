@@ -9,10 +9,15 @@ gem "coffee-rails", "~> 4.2"
 gem "jquery-rails"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
-gem "jquery-rails"
 gem "config", "~> 1.3"
 gem "autoprefixer-rails"
 gem "faker"
+gem "carrierwave", "0.11.2"
+gem "mini_magick", "4.5.1"
+gem "fog", "1.38.0"
+gem "will_paginate", "3.1.5"
+gem "bootstrap-will_paginate"
+gem "figaro"
 
 group :development, :test do
   gem "byebug", platform: :mri
