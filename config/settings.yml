@@ -12,3 +12,5 @@ user:
     per_page: 5
   size:
     image: 5
+  word:
+    maximum: 30

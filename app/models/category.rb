@@ -10,7 +10,7 @@ class Category < ApplicationRecord
   private
   def picture_size
     if picture.size > Settings.user.size.image.megabytes
-      errors.add(:picture, t "should_be_less_than_5MB")
+      errors.add :picture, I18n.t("should_be_less_than_5MB")
     end
   end
 end

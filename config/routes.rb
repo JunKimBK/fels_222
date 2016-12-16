@@ -15,7 +15,8 @@ Rails.application.routes.draw do
     root "users#index"
     resources :users
     resources :categories do
-    resources :words
+      resources :words
     end
+    resources :words
   end
 end
