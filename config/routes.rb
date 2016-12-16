@@ -19,4 +19,8 @@ Rails.application.routes.draw do
     end
     resources :words
   end
+
+  resources :categories do
+    resources :lessons
+  end
 end
