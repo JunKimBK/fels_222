@@ -72,3 +72,4 @@ en:
   name_show: "show category"
   access_denied: "user access denied"
   should_be_less_than_5MB: "should be less than 5MB"
+  edit_user: "Edit user"
