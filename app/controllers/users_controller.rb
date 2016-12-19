@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   before_action :logged_in_user, only: [:index, :show]
   before_action :correct_user, only: [:edit, :update]
-  before_action :admin_or_correct_user, only: [:edit, :update]
 
   def index
     @users = User.paginate page: params[:page],
@@ -51,13 +50,6 @@ class UsersController < ApplicationController
     unless @user == current_user
       flash[:alert] = t"not_current_user"
       redirect_to root_path
-    end
-  end
-
-  def admin_or_correct_user
-    unless current_user.is_user?(@user) || admin?
-      flash[:danger] = t "denied"
-      redirect_to @user
     end
   end
 end
