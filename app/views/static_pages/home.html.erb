@@ -5,11 +5,15 @@
       </section>
     </aside>
     <label class="button-inline">
-      <%= button_to t("words_list"), words_path, :class => "btn btn-lg btn-primary", method: :get %>
+      <%= button_to t("words_list"), words_path, class: "btn btn-lg btn-primary", method: :get %>
     </label>
     <label class="button-inline">
-      <%= button_to t("categories"), categories_path, :class => "btn btn-lg btn-primary", method: :get %>
+      <%= button_to t("categories"), categories_path,
+        class: "btn btn-lg btn-primary", method: :get %>
     </label>
+        <%= render "shared/stats" %>
+      </section>
+    </aside>
     <div class="col-md-8">
       <h3><%= t "activity" %></h3>
     </div>

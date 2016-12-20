@@ -20,7 +20,26 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum:
     Settings.user.password.minimum_length}
 
+  scope :order_by_name, ->{order :name}
+
   def forget
     update_attribute :remember_digest, nil
+  end
+
+  def follow other_user
+    active_relationships.create followed_id: other_user.id
+  end
+
+  def unfollow other_user
+    relationship = active_relationships.find_by followed_id: other_user.id
+    if relationship
+      relationship.destroy
+    else
+      false
+    end
+  end
+
+  def following? other_user
+    following.include? other_user
   end
 end

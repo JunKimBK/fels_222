@@ -1,6 +1,7 @@
 user:
   avatar:
     avatar_default_size: 80
+    avatar_follow_size: 30
   name:
     maximum_length: 25
   email:
