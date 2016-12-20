@@ -2,7 +2,7 @@
   <tr>
     <td><%= category.id %></td>
     <td><%= category.name %></td>
-    <td><%= image_tag category.picture.url if category.picture? %></td>
+    <td><%= image_tag category.picture.url %></td>
     <td><%= link_to t("delete"), admin_category_path(category),
       method: :delete,
       data: { confirm: t("are_you_sure") }, class: "btn btn-success" %>

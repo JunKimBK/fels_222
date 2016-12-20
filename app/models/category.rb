@@ -7,6 +7,11 @@ class Category < ApplicationRecord
   accepts_nested_attributes_for :words
   validate  :picture_size
 
+  scope :alphabetically, ->{order name: :asc}
+  scope :search_name, ->name do
+    where "name LIKE ?", "%#{name}%" if name.present?
+  end
+
   private
   def picture_size
     if picture.size > Settings.user.size.image.megabytes
