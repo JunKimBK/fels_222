@@ -14,3 +14,7 @@ user:
     image: 5
   word:
     maximum: 30
+filter:
+  learned: learned
+  not_learned: not_learned
+  all: get_all
