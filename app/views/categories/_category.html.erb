@@ -10,7 +10,6 @@
       </div>
       <div class="col-md-6" >
         <%= form_for [category, category.lessons.build] do |f| %>
-          <%= f.hidden_field :category_id %>
           <%= f.submit t("start"), class: "btn btn-primary" %>
         <% end %>
       </div>

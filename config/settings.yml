@@ -18,3 +18,4 @@ filter:
   learned: learned
   not_learned: not_learned
   all: get_all
+answer_count: 1

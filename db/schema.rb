@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206063036) do
+ActiveRecord::Schema.define(version: 20161222015346) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "type"
     t.integer  "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "action"
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
@@ -54,6 +54,9 @@ ActiveRecord::Schema.define(version: 20161206063036) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
     t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 

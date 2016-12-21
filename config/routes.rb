@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   post "/signup",  to: "users#create"
   resources :users
 
-  resources :category, only: :index do
-    resources :lessons, except: [:index, :new, :destroy]
-  end
+
 
   namespace :admin do
     root "users#index"
@@ -20,8 +18,8 @@ Rails.application.routes.draw do
     resources :words
   end
 
-  resources :categories do
-    resources :lessons
+  resources :categories, only: [:index] do
+    resources :lessons, expect: [:destroy]
   end
   resources :words
 end

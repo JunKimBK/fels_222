@@ -22,4 +22,5 @@ class Word < ApplicationRecord
       (SELECT id FROM lessons WHERE user_id = ?))", current_user_id
   end
   scope :get_all, ->current_user_id{}
+  scope :random, ->{order("RANDOM()").limit(5).map(&:id)}
 end
