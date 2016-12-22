@@ -3,7 +3,7 @@ class Admin::WordsController < ApplicationController
   before_action :verify_admin
   before_action :load_word, only: [:edit, :update, :destroy]
   before_action :load_categories
-  before_action :load_category
+  before_action :load_category, only: :create
 
   def index
     if params[:category_id]

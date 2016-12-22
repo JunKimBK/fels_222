@@ -97,3 +97,8 @@ en:
   time: "time"
   lesson: "Lesson"
   start: "Start"
+  all: "All"
+  dont_filter_word: "Don't filter word"
+  word_list: "Word List"
+  search: "Search"
+  activity: "Activity"
