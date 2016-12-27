@@ -1,14 +1,11 @@
 class Admin::CategoriesController < ApplicationController
   before_action :logged_in_user
   before_action :verify_admin
-  before_action :load_category, only: [:edit, :update, :destroy]
+  before_action :load_category, only: [:edit, :update, :destroy, :show]
 
   def index
     @categories = Category.paginate page: params[:page],
       per_page: Settings.user.per_page
-  end
-
-  def show
   end
 
   def edit
@@ -21,29 +18,29 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new category_params
     if @category.save
-      flash[:success] = t "Created_success"
+      flash[:success] = t "created_success"
       redirect_to admin_categories_path
     else
-      flash[:danger] = t "Created_fail"
+      flash[:danger] = t "created_fail"
       render :new
     end
   end
 
   def update
     if @category.update_attributes category_params
-      flash[:success] = t "Updated_Category"
+      flash[:success] = t "updated_category"
       redirect_to admin_category_path
     else
-      flash[:danger] = t "Update_category_fail"
+      flash[:danger] = t "update_category_fail"
       render :edit
     end
   end
 
   def destroy
     if @category.destroy
-      flash[:success] = t "Deleted_Category"
+      flash[:success] = t "deleted_category"
     else
-      flash[:danger] = t "Deleted_Category_fail"
+      flash[:danger] = t "deleted_category_fail"
     end
     redirect_to admin_categories_path
   end

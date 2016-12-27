@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get  "/signup",  to: "users#new"
   post "/signup",  to: "users#create"
-  resources :users
 
-
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   namespace :admin do
     root "users#index"
@@ -22,4 +25,5 @@ Rails.application.routes.draw do
     resources :lessons, expect: [:destroy]
   end
   resources :words
+  resources :relationships, only: [:create, :destroy]
 end

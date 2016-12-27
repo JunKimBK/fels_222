@@ -19,3 +19,7 @@ filter:
   not_learned: not_learned
   all: get_all
 answer_count: 1
+learned: "learned"
+lesson_time: 1
+minute: "00"
+second: "30"

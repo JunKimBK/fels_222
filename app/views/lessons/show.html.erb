@@ -1,12 +1,6 @@
 <div class="container-fluid">
-  <div class="row" id="results">
-    <div class="col-md-8 col-md-offset-4">
-      <div class="row">
-        <div class="col-md-4">
-          <h1><%= @lesson.category.name %></h1>
-        </div><br>
-      </div>
-    </div>
+  <div class="row text-center">
+    <h1><%= @lesson.category.name %></h1>
   </div>
 </div>
 <table class="table">
@@ -30,7 +24,7 @@
     </tr>
   <% end %>
 </table>
-<div>
+<div class="container text-center">
   <h3><%= t "your_score"%>
     <span class="text-red">
       <%= @results.choosen_word_correct.count %><%= t "five" %>

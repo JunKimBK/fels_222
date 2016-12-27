@@ -9,7 +9,7 @@ class LessonsController < ApplicationController
   def create
     category = Category.find(params[:category_id])
     @lesson = category.lessons.create user: current_user
-    if @lesson.save
+    if @lesson
       flash[:success] = t "created_lesson_success"
       redirect_to edit_category_lesson_path category, @lesson
     else

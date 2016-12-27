@@ -8,6 +8,10 @@ class UsersController < ApplicationController
       per_page: Settings.user.per_page
   end
 
+  def show
+    @activities_feed = @user.activities.recent.paginate page: params[:page]
+  end
+
   def new
     @user = User.new
   end
@@ -29,6 +33,20 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def following
+    @title = t "following"
+    @user  = User.find params[:id]
+    @users = @user.following.paginate page: params[:page]
+    render "show_follow"
+  end
+
+  def followers
+    @title = t "followers"
+    @user  = User.find params[:id]
+    @users = @user.followers.paginate page: params[:page]
+    render "show_follow"
   end
 
   private
