@@ -18,3 +18,5 @@ filter:
   learned: learned
   not_learned: not_learned
   all: get_all
+word:
+  quantity: 5
